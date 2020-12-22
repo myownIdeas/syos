@@ -41,11 +41,11 @@
                                             <div class="overlay"></div>
                                         </div>
                                         <div class="product-details text-center">
-                                            <a href="{{url('product-detail/'.$product->name)}}"><h5 class="product-title">{{$product->name}}</h5></a>
+                                            <a href="{{url('product-detail/'.$product->slug)}}"><h5 class="product-title">{{$product->name}}</h5></a>
 {{--                                            <div class="star-rating" title="Rated 4.50 out of 5"><span data-width="90%">3.50</span></div>--}}
                                             <div class="price">{{--<del><span class="amount">$520.00</span></del>--}}<ins><span class="amount">${{number_format($product->price,2)}}</span></ins></div>
                                             <div class="btn-add-to-cart-wrapper">
-                                                <a class="btn btn-default btn-xs btn-add-to-cart" onclick="addToCart({{$_SESSION["cart_temp_id"]}},{{$product->id}} ,{{"'$product->name'"}} )" href="javascript:void(0)">Add To Cart</a>
+                                                <a class="btn btn-default btn-xs btn-add-to-cart" onclick="addToCart({{$_SESSION["cart_temp_id"]}},{{$product->id}} ,{{"'$product->slug'"}} )" href="javascript:void(0)">Add To Cart</a>
                                             </div>
                                         </div>
                                     </div>

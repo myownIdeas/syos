@@ -19,7 +19,7 @@
     <!--                    </div>-->
     <!--                </div>-->
     <!--            </div>-->
-    </section>
+<!-- </section>-->
 
     <section>
         <div class="container">
@@ -28,13 +28,16 @@
                     <div class="product">
                         <div class="col-md-5">
                             <div class="product-image">
+
                                 <ul class="owl-carousel-1col" data-nav="true">
 
                                     @foreach(unserialize($product[0]->images) as $image)
                                         <li data-thumb="https://placehold.it/750x750">
                                             <img src="{{URL::to('/').'/images/'.$image}}" alt=""></li>
                                     @endforeach
+
                                 </ul>
+
                             </div>
                         </div>
                         <div class="col-md-7">
@@ -63,17 +66,7 @@
                                         <input type="hidden" value="productID" name="add-to-cart">
                                         <table class="table variations no-border">
                                             <tbody>
-                                            {{--                                                <tr>--}}
-                                            {{--                                                    <td class="name">Size</td>--}}
-                                            {{--                                                    <td class="value">--}}
-                                            {{--                                                        <select class="form-control">--}}
-                                            {{--                                                            <option value="">Choose an option...</option>--}}
-                                            {{--                                                            <option value="large">Large</option>--}}
-                                            {{--                                                            <option selected="selected" value="medium">Medium</option>--}}
-                                            {{--                                                            <option value="small">Small</option>--}}
-                                            {{--                                                        </select>--}}
-                                            {{--                                                    </td>--}}
-                                            {{--                                                </tr>--}}
+
                                             <tr>
                                                 <td class="name"><!--Amount--></td>
                                                 <td class="value">
@@ -86,7 +79,8 @@
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <a class="single_add_to_cart_button btn btn-default" href="javascript:void(0)" onclick="addToCart({{$_SESSION["cart_temp_id"]}},{{$product[0]->id}})">Add to cart</a>
+                                        <a class="btn btn-success" href="{{url('/proceed-cart')}}">CheckOut</a>
+
                                     </form>
                                 </div>
                             </div>
@@ -131,15 +125,18 @@
                                 <div class="item">
                                     <div class="product">
                                         {{--                                        <span class="tag-sale">Sale!</span>--}}
-                                        <div class="product-thumb"> <img alt="" src="{{URL::to('/')}}/images/{{unserialize($related->images)[0]}}" class="img-responsive img-fullwidth">
+                                        <div class="product-thumb">
+                                            @if(isset(unserialize($related->images)[0]))
+                                            <img alt="" src="{{URL::to('/')}}/images/{{unserialize($related->images)[0]}}" class="img-responsive img-fullwidth">
+                                            @endif
                                             <div class="overlay"></div>
                                         </div>
                                         <div class="product-details text-center">
-                                            <a href="{{url('product-detail/'.$related->name)}}"><h5 class="product-title">{{$related->title}}</h5></a>
+                                            <a href="{{url('product-detail/'.$related->slug)}}"><h5 class="product-title">{{$related->title}}</h5></a>
                                             {{--                                            <div class="star-rating" title="Rated 4.50 out of 5"><span data-width="90%">3.50</span></div>--}}
                                             <div class="price">{{--<del><span class="amount">$520.00</span></del>--}}<ins><span class="amount">${{number_format($related->price,2)}}</span></ins></div>
                                             <div class="btn-add-to-cart-wrapper">
-                                                <a class="btn btn-default btn-xs btn-add-to-cart" href="{{url('/proceed-cart')}}">CheckOut</a>
+                                                <a class="single_add_to_cart_button btn btn-default" href="javascript:void(0)" onclick="addToCart({{$_SESSION["cart_temp_id"]}},{{$related->id}},{{"'$related->slug'"}})">Add to cart</a>
                                             </div>
                                         </div>
                                     </div>

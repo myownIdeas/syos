@@ -299,33 +299,6 @@
 
 
 
-
-    <!--<section id="services" class="bg-silver-light" style="background-color: #f3f3f3 !important;">-->
-    <!--            <div class="container pb-40">-->
-
-    <!--                <div class="section-content">-->
-    <!--                    <div class="row">-->
-    <!--                                                                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="text-align: center;">-->
-
-    <!--    <div class=""> <p><a href="{{url('/new_pharmacy_customer')}}" class="btn btn-default btn-theme-colored btn-xl ">NEW PHARMACY CUSTOMER</a></p></div>-->
-
-    <!--</div>-->
-
-
-
-    <!--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="text-align: center;">-->
-
-    <!--    <div class=""> <p><a href="{{url('/transfer')}}" class="btn btn-default btn-theme-colored btn-xl ">TRANSFER RX</a></p></div>-->
-
-    <!--</div>-->
-
-
-    <!--                                            </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </section>-->
-
-
     <section class="services-links">
         <div class="container">
             <ul>
@@ -348,69 +321,14 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h2 class="title">Products</h2>
-                        {{--                            <ol class="breadcrumb text-center text-black mt-10">--}}
-                        {{--                                <li><a href="#">Home</a></li>--}}
-                        {{--                                <li><a href="#">Pages</a></li>--}}
-                        {{--                                <li class="active text-theme-colored">Page Title</li>--}}
-                        {{--                            </ol>--}}
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="" style="display:none;">
 
-        <div class="container">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="products">
-                            <div class="row multi-row-clearfix">
-                                @foreach($products as $product)
-                                    <div class="col-sm-6 col-md-4 col-lg-4 mb-30">
-                                        <div class="product">
-                                            {{--                                                <span class="tag-sale">Sale!</span>--}}
-                                            <div class="product-thumb"> <img alt="" src="images/{{unserialize($product->images)[0]}}" class="img-responsive img-fullwidth">
-                                                <div class="overlay"></div>
-                                            </div>
-                                            <div class="product-details text-center">
-                                                <a href="{{url('product-detail/'.$product->id)}}"><h5 class="product-title">{{$product->name}}</h5></a>
-                                                {{--                                                    <div class="star-rating" title="Rated 4.50 out of 5"><span data-width="90%">3.50</span></div>--}}
-                                                <div class="price"><ins><span class="amount">${{$product->price}}</span></ins></div>
-                                                <div class="btn-add-to-cart-wrapper">
-                                                    <a class="btn btn-default btn-xs btn-add-to-cart attToCart" onclick="addToCart({{$_SESSION["cart_temp_id"]}},{{$product->id}})" href="javascript:void(0)">Add To Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <a href="{{url('/all_products')}}" class="btn btn-default btn-circled btn-xl ">View More</a>
-                                    {{--                                        <nav>--}}
-                                    {{--                                            <ul class="pagination theme-colored">--}}
-                                    {{--                                                <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a> </li>--}}
-                                    {{--                                                <li class="active"><a href="#">1</a></li>--}}
-                                    {{--                                                <li><a href="#">2</a></li>--}}
-                                    {{--                                                <li><a href="#">3</a></li>--}}
-                                    {{--                                                <li><a href="#">4</a></li>--}}
-                                    {{--                                                <li><a href="#">5</a></li>--}}
-                                    {{--                                                <li><a href="#">...</a></li>--}}
-                                    {{--                                                <li> <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>--}}
-                                    {{--                                            </ul>--}}
-                                    {{--                                        </nav>--}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Section: Services -->
     <section id="services" class="bg-silver-light">
         <div class="container pb-40">
             <div class="section-title text-center">

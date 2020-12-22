@@ -10,6 +10,7 @@
                         <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Slug</th>
                             <th>Title</th>
                             <th>image</th>
                             <th>Category</th>
@@ -23,6 +24,7 @@
                         @foreach($products as $product)
                             <tr>
                                 <td>{{$product->name}}</td>
+                                <td>{{$product->slug}}</td>
                                 <td>{{$product->title}}</td>
                                 <td><img src="{{asset('/images').'/'.unserialize($product->images)[0]}}" width="30px" height="30px" /></td>
                                 <td>{{$product->category->name}}</td>

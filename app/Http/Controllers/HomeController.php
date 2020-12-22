@@ -413,7 +413,7 @@ class HomeController extends Controller
             ->select('products.*','category.name as catName')
 
             ->join('category','category.id','=','products.category_id')
-            ->where('products.name',$name)->get();
+            ->where('products.slug',$name)->get();
     }
     public function getProductCodes($productId){
         return DB::table('product_codes')

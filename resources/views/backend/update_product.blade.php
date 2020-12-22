@@ -28,7 +28,12 @@
                                 </div>
                             </div>
 
-
+                            <div class="form-group">
+                                <label for="placeholder" class="col-sm-2 control-label">Product Slug</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="slug" value="{{$product['slug']}}" class="form-control" required id="placeholder" placeholder="Product Slug">
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="disabled" class="col-sm-2 control-label">Product Title</label>
                                 <div class="col-sm-10">

@@ -49,6 +49,7 @@ class AdminController extends Controller
 
        $records = [
            'name'=>$request->get('name'),
+           'slug'=>str_slug($request->get('slug')),
            'title'=>$request->get('title'),
            'avaliabilty'=>$request->get('availability'),
            'category_id'=>$request->get('category_id'),
@@ -59,6 +60,7 @@ class AdminController extends Controller
            'stock'=>$request->get('stock'),
            'images'=>serialize($imageName),
        ];
+
        $productId = DB::table('products')->insertGetId($records);
        $this->insertProductCodes($request->all(),$productId);
       return Redirect::back();
@@ -98,6 +100,7 @@ class AdminController extends Controller
 
         $records = [
             'name'=>$request->get('name'),
+            'slug'=>str_slug($request->get('slug')),
             'title'=>$request->get('title'),
             'avaliabilty'=>$request->get('availability'),
             'category_id'=>$request->get('category_id'),
